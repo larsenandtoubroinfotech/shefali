@@ -1,0 +1,16 @@
+A python script is there "instance_creation.py" for creating an ec2 instance on aws.
+Its a general script can be given parameters according to our need.
+For running that script: 
+
+"""python instance_creation.py "image_id" "name" "key_name" "instance_type" "subnet_id" "service_name""""
+
+A shell script is called by that python script for installing a service on the intance created that is "service_installation.sh"
+A service name can be specifyed and that service will get install on that ec2 instance.
+
+"""sh service_installation.sh "service_name""""
+
+Once this script executed successfully will get the public dns with which that ec2 instance can be accessible.
+For accessing the created ec2 instance through linux machine
+
+"""chmod 600 /home/shefali/.ssh/"key_name.pem""""
+"""ssh -i /home/shefali/.ssh/"key_name.pem" "username"@"public dns""""
